@@ -1,0 +1,32 @@
+<div class="flex gap-x-3 rounded-lg animHidden">
+  <div class="w-16 md:w-32 text-end">
+    <div class="text-xs text-gray-500 dark:text-gray-300 mt-1">{{ timeSpan }}</div>
+  </div>
+  <div
+    class="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 after:dark:bg-gray-600">
+    <div class="relative z-10 w-7 h-7 flex justify-center items-center">
+      <a [href]="imageLink"
+         target="_blank">
+        <img class="flex-shrink-0 w-7 h-7 rounded-full border-2 border-gray-200 dark:border-gray-600" height="28" width="28"
+             data-src="{{imageSrc}}"
+             [alt]="imageAlt"
+             [src]="imageSrc">
+      </a>
+    </div>
+  </div>
+  <div class="pt-0.5 pb-8 w-11/12 md:w-9/12">
+    <span
+      class="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">{{ title }}</span>
+    <span
+      class="mt-1 -ms-1 p-1 inline-flex items-center gap-x-2 text-sm rounded-lg border border-transparent text-gray-500 dark:text-gray-300 disabled:opacity-50 disabled:pointer-events-none ">
+          <img class="flex-shrink-0 w-5 h-5 rounded-full" height="20" width="20"
+               data-src="/roman.lysser.cropped.webp"
+               alt="Portrait of Roman Lysser"
+               src="/roman.lysser.cropped.webp">
+      {{ jobTitle }}
+    </span>
+    <p class="mt-1 text-sm md:text-base text-gray-600 dark:dark:text-gray-300 ">
+      <ng-content></ng-content>
+    </p>
+  </div>
+</div>

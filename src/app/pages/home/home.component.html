@@ -1,0 +1,110 @@
+<div id="home">
+  <div class="mx-auto max-w-screen-xl flex-col-reverse items-center flex lg:flex-row md:px-8 pb-12 px-4">
+    <div class="max-w-md max-h-mdflex items-center justify-center rounded-lg">
+      <img [src]="imagePath" alt="Roman Lysser" class="h-full w-full object-cover rounded-lg animHidden">
+    </div>
+    <div class="p-8">
+      <app-title [smallLineSep]="true">Hey there, I'm Roman</app-title>
+      <div class="uppercase tracking-wide text-xs md:text-sm text-emerald-900 dark:text-emerald-400 font-bold animHidden">
+        Software Engineer & Bachelor of Science Student
+      </div>
+      <p class="mt-4 max-w-2xl text-base md:text-xl text-gray-500 dark:text-gray-300 animHidden">
+        I'm a software engineer and a bachelor of science student.
+      </p>
+      <div class="mt-6">
+        <a href="#contacts"
+           class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-emerald-900 hover:bg-emerald-700 animHidden">
+          Get in touch
+        </a>
+        <p class="text-red-500">Kontaktabschnitt erstellen</p>
+      </div>
+    </div>
+  </div>
+
+  <app-content title="My Professional Career">
+    <app-timeline>
+      <app-timeline-entry jobTitle="Software Engineer" title="Software Engineer at MySign AG"
+                          timeSpan="Jan 2023 - Aug 2024" imageSrc="/mysign_logo.ico"
+                          imageLink="https://www.mysign.ch/de/" class="delay">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet.
+      </app-timeline-entry>
+      <app-timeline-entry jobTitle="Software Engineer Apprentice" title="Software Engineer Apprentice at Centris AG"
+                          timeSpan="Aug 2017 - Jul 2021" imageSrc="/centris_logo.png"
+                          imageLink="https://www.centrisag.ch/" class="delay">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet.
+      </app-timeline-entry>
+    </app-timeline>
+  </app-content>
+
+  <app-content title="My Education">
+    <app-timeline>
+      <app-timeline-entry jobTitle="Bachelor of Science Student (part time)"
+                          title="Bachelor of Science, Computer Science" timeSpan="Feb 2024 - Present"
+                          imageSrc="/hslu.ico" imageLink="https://www.hslu.ch/de-ch/informatik/studium/bachelor/"
+                          class="delay">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet.
+      </app-timeline-entry>
+      <app-timeline-entry jobTitle="Berufsmatura Student"
+                          title="Vocational Baccalaureate, Engineering, Architecture, Life Sciences"
+                          timeSpan="Aug 2021 - Jun 2022" imageSrc="/bbzsogr.ico" imageLink="https://bbzsogr.so.ch/"
+                          class="delay">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet.
+      </app-timeline-entry>
+      <app-timeline-entry jobTitle="Informatiker EFZ"
+                          title="Federal VET Diploma in Information Technology, Application Engineering"
+                          timeSpan="Aug 2017 - Jul 2021" imageSrc="/bbzsogr.ico" imageLink="https://bbzsogr.so.ch/"
+                          class="delay">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet.
+      </app-timeline-entry>
+    </app-timeline>
+  </app-content>
+
+  <app-content title="My Skills">
+    <p class="text-red-500">
+      Kenntnisse aufzählen <br>
+    - Sprachen <br>
+    - Programmiersprache und Frameworks<br>
+    </p>
+
+    <app-card>
+      <app-card-entry title="Angular" colorClass="text-red-500" path="M13 10V3L4 14h7v7l9-11h-7z">Ich kann Angular</app-card-entry>
+      <app-card-entry title="Angular">Ich kann Angular</app-card-entry>
+      <app-card-entry title="Angular">Ich kann Angular</app-card-entry>
+      <app-card-entry title="Angular">Ich kann Angular</app-card-entry>
+    </app-card>
+  </app-content>
+
+  <app-content title="My Interests">
+    <p class="text-red-500">Interessen und Hobbies aufzählen</p>
+
+  </app-content>
+
+  <app-content title="Get in touch">
+    <p class="text-red-500">Kontaktabschnitt erstellen</p>
+  </app-content>
+</div>

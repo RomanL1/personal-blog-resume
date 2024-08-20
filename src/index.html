@@ -2,12 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>PersonalBlogResume</title>
+  <title>Roman Lysser | Portfolio</title>
   <base href="/">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Roman Lysser">
+
+
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+
+  <script src="animate.js"></script>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
 </head>
-<body>
+<body class="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text transition-colors duration-300">
   <app-root></app-root>
 </body>
 </html>
