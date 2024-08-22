@@ -10,7 +10,8 @@ import {NgOptimizedImage} from "@angular/common";
   templateUrl: './timeline-entry.component.html',
 })
 export class TimelineEntryComponent {
-  @Input() timeSpan: string = '';
+  @Input() timeSpanFrom: string = '';
+  @Input() timeSpanTo: string = '';
   @Input() title: string = '';
   @Input() jobTitle: string = '';
   @Input() description: string = '';

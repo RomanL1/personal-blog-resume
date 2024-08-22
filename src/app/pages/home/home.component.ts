@@ -5,6 +5,7 @@ import {TimelineComponent} from "../../components/timeline/timeline.component";
 import {TimelineEntryComponent} from "../../components/timeline/timeline-entry/timeline-entry.component";
 import {CardComponent} from "../../components/card/card.component";
 import {CardEntryComponent} from "../../components/card/card-entry/card-entry.component";
+import {SocialButtonsComponent} from "../../components/social-buttons/social-buttons.component";
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ import {CardEntryComponent} from "../../components/card/card-entry/card-entry.co
     TimelineComponent,
     TimelineEntryComponent,
     CardComponent,
-    CardEntryComponent
+    CardEntryComponent,
+    SocialButtonsComponent
   ],
   templateUrl: './home.component.html',
 })
