@@ -12,7 +12,22 @@
 
   <link rel="icon" type="image/x-icon" href="favicon.png">
 
-  <script src="animate.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animShow');
+          } else {
+            entry.target.classList.remove('animShow');
+          }
+        });
+      });
+
+      const hiddenElements = document.querySelectorAll('.animHidden');
+      hiddenElements.forEach((element) => observer.observe(element));
+    });
+  </script>
   <script>
     (function() {
       const savedTheme = localStorage.getItem('theme');

@@ -16,7 +16,7 @@
     <div class="relative z-10 w-7 h-7 flex justify-center items-center">
       <a [href]="imageLink"
          target="_blank">
-        <img class="flex-shrink-0 w-7 h-7 rounded-full border-2 border-gray-200 dark:border-gray-600" height="28"
+        <img class="flex-shrink-0 w-7 h-7 rounded-full border-2 border-gray-200 dark:border-gray-600" [class.bg-white]="imageBgWhite" height="28"
              width="28"
              data-src="{{imageSrc}}"
              [alt]="imageAlt"

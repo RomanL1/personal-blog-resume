@@ -10,6 +10,8 @@ export class CardEntryComponent implements OnInit {
   @Input() title: string = '';
   @Input() colorClass: string = '';
   @Input() path: string = '';
+  @Input() imageSrc: string = '';
+  @Input() imageAlt: string = '';
 
   classes: WritableSignal<string> = signal('h-6 w-6 mr-2');
 

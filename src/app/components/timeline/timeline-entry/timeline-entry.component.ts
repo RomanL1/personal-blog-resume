@@ -18,4 +18,5 @@ export class TimelineEntryComponent {
   @Input() imageSrc: string = '';
   @Input() imageLink: string = '';
   @Input() imageAlt: string = '';
+  @Input() imageBgWhite: boolean = false;
 }
