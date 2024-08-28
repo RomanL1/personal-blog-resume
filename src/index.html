@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script>
+    const setTheme = (theme) => {
+      theme ??= localStorage.theme;
+      let unsetTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+      theme = theme ?? unsetTheme;
+      document.documentElement.dataset.theme = theme;
+      localStorage.theme = theme;
+    };
+    setTheme();
+  </script>
+
   <meta charset="utf-8">
   <title>Roman Lysser | Portfolio</title>
   <base href="/">
@@ -8,13 +19,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index,follow">
   <meta name="author" content="Roman Lysser">
-  <meta name="description" content="Passionate software engineer with experience in e-commerce apps. Currently pursuing a BSc in Computer Science while working in the tech industry.">
+  <meta name="description"
+        content="Passionate software engineer with experience in e-commerce apps. Currently pursuing a BSc in Computer Science while working in the tech industry.">
   <meta name="keywords"
         content="Roman Lysser, Lysser, Roman, Portfolio, Software Engineer, Bachelor of Science Student, Angular, Tailwind, Express.js, Java, Switzerland, Java Expert in Switzerland, HSLU Student, HSLU, Java Expert, Java Spring">
 
   <!-- Open Graph meta tags for social media -->
   <meta property="og:title" content="Roman Lysser's Portfolio">
-  <meta name="og:description" content="Passionate software engineer with experience in e-commerce apps. Currently pursuing a BSc in Computer Science while working in the tech industry.">
+  <meta name="og:description"
+        content="Passionate software engineer with experience in e-commerce apps. Currently pursuing a BSc in Computer Science while working in the tech industry.">
   <meta property="og:image" content="https://lysser.me/roman.lysser.webp">
   <meta property="og:url" content="https://lysser.me/">
 
@@ -22,7 +35,8 @@
   <!--  <meta name="twitter:site" content="@yourtwitterhandle">-->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Roman Lysser's Portfolio">
-  <meta name="twitter:description" content="Passionate software engineer with experience in e-commerce apps. Currently pursuing a BSc in Computer Science while working in the tech industry.">
+  <meta name="twitter:description"
+        content="Passionate software engineer with experience in e-commerce apps. Currently pursuing a BSc in Computer Science while working in the tech industry.">
   <meta name="twitter:image" content="https://lysser.me/roman.lysser.webp">
 
   <link rel="canonical" href="https://lysser.me/">
@@ -57,16 +71,7 @@
       hiddenElements.forEach((element) => observer.observe(element));
     });
   </script>
-  <script>
-    (function () {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.add('light');
-      }
-    })();
-  </script>
+
 </head>
 <body
   class="bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text transition-colors duration-300">

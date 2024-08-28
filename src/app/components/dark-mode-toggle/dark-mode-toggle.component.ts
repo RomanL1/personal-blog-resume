@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import {Component, OnInit, Inject, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-dark-mode-toggle',
@@ -8,6 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './dark-mode-toggle.component.html',
 })
 export class DarkModeToggleComponent {
+  public readonly stringKey = 'theme'
   isDarkMode: boolean = false;
   isBrowser: boolean;
 
@@ -19,7 +20,7 @@ export class DarkModeToggleComponent {
   }
 
   private initializeTheme() {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem(this.stringKey);
     if (savedTheme === 'dark') {
       this.isDarkMode = true;
     } else if (savedTheme === 'light') {
@@ -36,11 +37,15 @@ export class DarkModeToggleComponent {
   }
 
   private updateTheme() {
-    if (this.isBrowser) {
-      document.documentElement.classList.remove('light', 'dark');
-      const newTheme = this.isDarkMode ? 'dark' : 'light';
-      document.documentElement.classList.add(newTheme);
-      localStorage.setItem('theme', newTheme);
+    if (!this.isBrowser) {
+      return
+    }
+    if (this.isDarkMode) {
+      localStorage.setItem(this.stringKey, 'dark');
+      document.documentElement.dataset[this.stringKey] = 'dark';
+    } else {
+      localStorage.setItem(this.stringKey, 'light');
+      document.documentElement.dataset[this.stringKey] = 'light';
     }
   }
 }
