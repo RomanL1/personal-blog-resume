@@ -1,13 +1,14 @@
 {
   "name": "personal-blog-resume",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run generate-sitemap",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:personal-blog-resume": "node dist/personal-blog-resume/server/server.mjs"
+    "serve:ssr:personal-blog-resume": "node dist/personal-blog-resume/server/server.mjs",
+    "generate-sitemap": "node generate-sitemap.js"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/ssr": "^18.2.0",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
+    "sitemap": "^8.0.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },
