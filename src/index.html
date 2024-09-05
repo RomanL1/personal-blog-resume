@@ -4,9 +4,10 @@
   <script>
     const setTheme = (theme) => {
       theme ??= localStorage.theme;
-      let unsetTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
-      theme = theme ?? unsetTheme;
-      document.documentElement.dataset.theme = theme;
+      const serverTheme = '{{ theme }}';
+      const unsetTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+      theme = theme || serverTheme || unsetTheme;
+      document.documentElement.dataset['theme'] = theme;
       localStorage.theme = theme;
     };
     setTheme();
