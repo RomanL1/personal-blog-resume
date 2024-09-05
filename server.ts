@@ -32,6 +32,10 @@ export function app(): express.Express {
     res.sendFile(path.resolve(__dirname, 'browser/sitemap.xml'));
   });
 
+  server.use('/robots.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'browser', 'robots.txt'));
+  });
+
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;

@@ -1,0 +1,4 @@
+# src/robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://lysser.me/sitemap.xml

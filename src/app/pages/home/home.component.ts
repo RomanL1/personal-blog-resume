@@ -22,5 +22,5 @@ import {SocialButtonsComponent} from "../../components/social-buttons/social-but
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  imagePath = '/roman.lysser.webp';
+  imagePath = '/assets/roman.lysser.webp';
 }
