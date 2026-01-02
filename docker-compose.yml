@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  # -----------------------------------------------------
+  # Angular SSR App (your blog)
+  # -----------------------------------------------------
+  blog:
+    build: .
+    container_name: blog-ssr
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    expose:
+      - "4000"   # internal only
+
+  # -----------------------------------------------------
+  # Caddy Reverse Proxy
+  # -----------------------------------------------------
+  caddy:
+    image: caddy:2.8
+    container_name: caddy
+    restart: unless-stopped
+    depends_on:
+      - blog
+    ports:
+      - "8080:8080" # optional for local LAN testing
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  # -----------------------------------------------------
+  # Cloudflare Tunnel
+  # -----------------------------------------------------
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel run ${TUNNEL_NAME}
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN}
+    volumes:
+      - ./cloudflared:/etc/cloudflared
+
+volumes:
+  caddy_data:
+  caddy_config:
