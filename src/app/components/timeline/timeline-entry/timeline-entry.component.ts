@@ -1,12 +1,9 @@
 import {Component, Input} from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-timeline-entry',
   standalone: true,
-  imports: [
-    NgOptimizedImage
-  ],
+  imports: [],
   templateUrl: './timeline-entry.component.html',
 })
 export class TimelineEntryComponent {
